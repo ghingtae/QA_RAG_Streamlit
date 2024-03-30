@@ -9,7 +9,7 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.document_loaders import Docx2txtLoader
 from langchain.document_loaders import UnstructuredPowerPointLoader
 
-from langchain_community.document_loaders.csv_loader import CSVLoader
+# from langchain_community.document_loaders.csv_loader import CSVLoader
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -114,9 +114,9 @@ def get_text(docs):
         elif '.pptx' in doc.name:
             loader = UnstructuredPowerPointLoader(file_name)
             documents = loader.load_and_split()
-        elif '.csv' in doc.name:
-            loader = CSVLoader(file_name)
-            documents = loader.load_and_split()
+        # elif '.csv' in doc.name:
+        #     loader = CSVLoader(file_name)
+        #     documents = loader.load_and_split()
 
         doc_list.extend(documents)
     return doc_list
